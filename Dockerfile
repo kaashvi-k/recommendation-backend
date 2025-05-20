@@ -16,12 +16,12 @@ ENV PATH="/opt/venv/bin:$PATH"
 # Upgrade pip inside the virtual environment
 RUN pip install --upgrade pip
 
-# Copy Python dependencies file and install them inside venv
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# Set working directory for Node app
+# Set working directory early for caching purposes
 WORKDIR /app
+
+# Copy Python dependencies file and install them inside the virtual environment
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy Node.js dependency definitions and install dependencies
 COPY package*.json ./
@@ -33,5 +33,5 @@ COPY . .
 # Expose the port your app will run on
 EXPOSE 2000
 
-# Start your Node.js server
+# Start your Node.js server (update if your start command is different)
 CMD ["node", "server.js"]
