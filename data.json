@@ -1,15 +1,15 @@
 {
   "1-1": [
     {
-      "subject": "GENERAL CHEMISTRY",
+      "subject": "COMPUTER PROGRAMMING",
       "courseGrade": "10"
     },
     {
-      "subject": "ELECTRONIC DEVICES",
+      "subject": "MATHEMATICS I",
       "courseGrade": "10"
     }
   ],
-  "beDegree": "B.E Electrical & Electronic",
+  "beDegree": "B.E Electronics & Communication",
   "mscDegree": "None",
   "preferredElective": ""
 }
